@@ -19,5 +19,5 @@ from main import urls as main_urls
 
 urlpatterns = [
 	url(r'^admin/$', include(admin.site.urls)),
-	url(r'^.*/$', include(main_urls))
+	url(r'', include(main_urls))
 ]
