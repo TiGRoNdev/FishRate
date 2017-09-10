@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		{% block headers %}
+			<meta name="description" content="">
+		{% endblock %} 
+    
+		<meta name="author" content="">
+
+		<title>Народный рейтинг снастей-FishRate</title>
+		<link rel="icon" href="/static/img/Fishrate.png">
+		<link rel="stylesheet" href="/static/public/css/bootstrap.css">
+		<link rel="stylesheet" href="/static/public/css/bootstrap-theme.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="col-md-8">
+					<div class="navbar-header">
+						<a class="navbar-brand"><b>FishRate, Народный рейтиг снастей</b></a>
+					</div>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="/">Главная</a></li>
+					<li><a href="/popular/">Популярные снасти</a></li>
+					<li><a href="/read/">Статьи о рыбалке</a></li>
+				</ul>
+			</div>
+			<ul class="nav nav-pills pull-right">
+				{% if username %}
+					<li><h5>Эй, <b>{{ username }}, </b>рыбы передают тебе "Привет"  </h5></li>
+					<li><a class="btn btn-warning" href="/signout/">Выйти</a></li>
+				{% else %}
+					<li><a class="btn btn-success" href="/signin/">Войти</a></li>
+				{% endif %}
+			</ul>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-10">
+					{% block content %}
+						This block named "content"
+					{% endblock %}
+				</div>
+				<div class="col-md-2">
+					{% block right-sidebar %}
+						This block named "right-sidebar"
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4">
+						<p>&copy; TiGRoNdev 2017</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scripts and other -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> -->
+		<script src="/static/public/js/bootstrap.js"></script>
+		<script>
+			$(function () {
+				$('[data-toggle="popover"]').popover()
+			})
+		</script>
+	</body>
+</html>
