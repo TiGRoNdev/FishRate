@@ -27,6 +27,10 @@ class Tackle(models.Model):  # Модель снасть
 	rating = models.IntegerField(default=0)
 	img = models.OneToOneField(ImgTackle, null=False)
 	articles = models.ManyToManyField(Article)
+	def get_absolute_url(self):
+		return "/tackle/{}/".format(self.id)
+	def __unicode__(self):
+		return self.name
 
 
 class FeedbackToTackle(models.Model):  # Модель отзыв к снасти
