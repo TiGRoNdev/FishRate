@@ -106,4 +106,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),    
 ]
 
-STATIC_ROOT = '../fishrate/static/'
+STATIC_ROOT = '../fishrate/static/' 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads')
+
+MEDIA_URL = '/uploads/'
