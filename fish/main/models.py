@@ -39,7 +39,9 @@ class Fish(models.Model):  # Модель-Рыба
 
 
 class Tackle(models.Model):  # Модель снасть
-	name = models.CharField(max_length=120, unique=True)
+	name = models.CharField(max_length=120, blank=False)
+	model = models.CharField(max_length=120, blank=False)
+	
 	added_at = models.DateField(auto_now_add=True)
 	rating = models.IntegerField(default=0)
 	articles = models.ManyToManyField(Article)
